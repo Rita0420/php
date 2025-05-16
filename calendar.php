@@ -79,12 +79,16 @@
 
 
 //處理萬年曆切換上下月的部分
-if(isset($_GET['month'])){
-    $month=$_GET['month'];   
+
+
+if(isset($_GET['month'])){ //確認網址中有無提供month的值
+    $month=$_GET['month'];   //有的話就用那個值
 }else{
-    $month=date("m");
+    $month=date("m");  //沒有的話就用系統時間
 }
-if(isset($_GET['year'])){
+
+
+if(isset($_GET['year'])){ //跟月份那一樣的意思
     $year=$_GET['year'];
 }else{
     $year=date("Y");
@@ -118,6 +122,8 @@ $firstDayWeek = date("w", strtotime($firstDay)); //利用w(日0-六6)的特性�
 $theDaysOfMonth=date("t", strtotime($firstDay));//利用t得知當月有幾天
 
 
+
+//列出重要日期的陣列
 $spDate=[
     '2025-04-04'=>'兒童節',
     '2025-04-05'=>'清明節',
@@ -129,6 +135,8 @@ $spDate=[
 
 $todoList=[ '2025-05-01'=>'開會'];
 
+
+//先設好一個空的陣列
 $monthDays=[];
 
 //填入空白日期
@@ -137,8 +145,8 @@ for($i=0;$i<$firstDayWeek;$i++){
 }
 
 //填入當日日期
-for($i=0;$i<$theDaysOfMonth;$i++){
-        $timestamp = strtotime(" $i days", strtotime($firstDay));
+for($i=0;$i<$theDaysOfMonth;$i++){  //迴圈從0開始每圈+1跑並且小於當月天數
+        $timestamp = strtotime(" $i days", strtotime($firstDay)); 
         $date=date("d", $timestamp);
         $holiday="";
         foreach($spDate as $d=>$value){
