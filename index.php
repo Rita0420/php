@@ -27,11 +27,11 @@
     <form action="bmi.php" method='get'>
         <div>
             <label for="height">身高(公尺):</label>
-            <input type="number" step="0.01" name="height">
+            <input type="number" step="0.01"  min="0" name="height">
         </div>
         <div>
             <label for="weight">體重(公斤):</label>
-            <input type="number" name="weight">
+            <input type="number" name="weight" min="0">
         </div>
         <input type="submit" name="計算BMI">
         <input type="reset" value="清空內容">
