@@ -10,24 +10,30 @@
             box-sizing: border-box;
             margin: 0;
         }
+        .container{
+            height: 20vh;
+            background-color: antiquewhite;
+            width: 40%;
+            margin: auto;
+            text-align: center;
+            margin-top: 40vh;
+        }
 
         .member {
             width: 40%;
             height: 15vh;
             background-color: beige;
-            text-align: center;
-            margin: auto;
-            margin-top: 42.5%;
             border: 3px solid black;
-        }
-
-        h2 {
-            text-align: center;
+            padding-top: 10px;
+            margin: auto;
         }
     </style>
 </head>
-
 <body>
+<?php
+if(!isset($_GET['login'])){
+?>
+
     <div class="container">
         <div>
             <h2>會員登入</h2>
@@ -43,12 +49,14 @@
                     <input type="text" name="pw">
                 </div>
                 <br>
-                <br>
                 <input type="submit" name="登入">
                 <input type="reset" value="清空內容">
             </form>
         </div>
     </div>
+<?php
+}
+?>
 </body>
 
 </html>
