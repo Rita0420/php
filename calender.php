@@ -73,31 +73,16 @@
     </style>
 </head>
 <body>
-<!-- <div class="box-container">
-<?php
-
-/* for($i=0;$i<20;$i++){
-    echo "<div class='box'>";
-        echo $i;
-    echo "</div>";
-} */
-?>
-</div> -->
-
-
-
-
-
  <h1>線上日曆</h1>  
 
  <?php
+
+
+//處理萬年曆切換上下月的部分
 if(isset($_GET['month'])){
-    $month=$_GET['month'];
-    
-   
+    $month=$_GET['month'];   
 }else{
     $month=date("m");
-    
 }
 if(isset($_GET['year'])){
     $year=$_GET['year'];
@@ -122,11 +107,15 @@ if($month+1>12){
     $nextyear=$year;
 }
     
+//處理萬年曆切換上下月的部分
 
-$today = date("Y-$month-d");
-$firstDay = date("Y-$month-01");
-$firstDayWeek = date("w", strtotime($firstDay));
-$theDaysOfMonth=date("t", strtotime($firstDay));
+
+
+
+$today = date("Y-$month-d"); //可以得知當前是哪個月份
+$firstDay = date("Y-$month-01");  //當月的第一天
+$firstDayWeek = date("w", strtotime($firstDay)); //利用w(日0-六6)的特性知道第一週的第一天在哪
+$theDaysOfMonth=date("t", strtotime($firstDay));//利用t得知當月有幾天
 
 
 $spDate=[
