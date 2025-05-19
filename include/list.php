@@ -52,24 +52,12 @@
 </head>
 
 <body>
-    <header>
-        <h1>學生管理系統</h1>
-    </header>
-    <nav>
-        <ul>
-            <li>首頁</li>
-            <li>學生列表</li>
-            <li>新增學生</li>
-            <li>關於</li>
-        </ul>
-    </nav>
+ <?php include "header.php" ?>
     <main>
         <h2>歡迎來到學生列表</h2>
-        <p>請從上方選取</p>
+        <p>學生列表</p>
     </main>
-    <footer>
-        <p>&copy<?php echo date('Y'); ?> 學生管理列表</p>
-    </footer>
+    <?php include "footer.php"; ?>
 </body>
 
 </html>
