@@ -69,7 +69,7 @@
                 <h2>會員登入</h2>
             </div>
             <div class="member">
-                <form action="session/check.php" method='post'>
+                <form action="check.php" method='post'>
                     <div>
                         <label for="acc">帳號:</label>
                         <input type="text" name="acc" required>
