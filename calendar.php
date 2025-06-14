@@ -70,6 +70,9 @@
         h2{
             text-align:center;
         }
+        .day-info{
+            background-color: purple;
+        }
     </style>
 </head>
 <body>
@@ -222,7 +225,6 @@ foreach($monthDays as $day){
 
         echo "</div>";
     echo "</div>";
-
 
     echo "<div class='holiday-info'>";
     if(isset($day['holiday'])){
