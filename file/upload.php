@@ -5,7 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>檔案上傳</title>
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+    background-color: rgb(57, 55, 55);
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px black;
+}
+
+.types {
+    width: 20vw;
+    height: 7vh;
+    background-color: rgb(127, 255, 212, 0.3);
+    margin: auto;
+    margin-top: 2vh;
+    text-align: center;
+    padding-top: 3vh;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px white;
+    font-size: 1.5em;
+}
+
+.types:hover {
+    background-color: rgb(127, 255, 212, 0.8);
+    border: 4px solid aliceblue;
+}
+
+header {
+    text-align: center;
+    color: aliceblue;
+    font-size: 2em;
+}
+
+form {
+    text-align: center;
+    margin-top: 5vh;
+    color: aliceblue;
+}
+
+.home {
+    width: 10vw;
+    height: 5vh;
+    border: 2px solid aliceblue;
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    padding-top: 1.5vh;
+    margin-top: 2vh;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+    </style>
 </head>
 <body>
     <header>檔案上傳練習</header>

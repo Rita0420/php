@@ -46,14 +46,43 @@
             height: 5vh;
             border: 2px solid aliceblue;
             border-radius: 30px;
-            margin:auto;
             text-align:center;
             padding-top: 1.5vh;
-            margin-top: 2vh;
+            position: sticky;
+            bottom: 10vh;
+            left: 90vw;
+        }
+        .new{
+            width: 10vw;
+            height: 5vh;
+            border: 2px solid aliceblue;
+            border-radius: 30px;
+            text-align:center;
+            padding-top: 1.5vh;
+            position: absolute;
+            top: 10vh;
+            right: 1vw;
         }
         a{
             color:aliceblue;
             text-decoration: none;
+        }
+        h2{
+            color:rgb(240, 248, 255,0.5);
+            text-align:center;
+        }
+        .pages{
+            display:flex;
+            justify-content: space-between;
+            width: 70vw;
+            text-align:center;
+            margin:auto;
+        }
+        .box{
+            display: inline;
+            margin-left:1vw;
+            margin-right:1vw;
+            
         }
     </style>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -62,15 +91,56 @@
     <header>檔案管理功能</header>
     <br><br>
 <?php
+include_once "db.php";
+
+$rows=all("uploads");
+
 if (isset($_GET['msg'])) {
     echo "<h2>".$_GET['msg']."</h2>";
 }
-$dsn="mysql:host=localhost;dbname=files;charset=utf8";
-$pdo=new PDO($dsn,'root','');
-$rows=$pdo->query("select * from uploads")->fetchAll(PDO::FETCH_ASSOC);
+//  $dsn="mysql:host=localhost;dbname=files;charset=utf8";
+//  $pdo=new PDO($dsn,'root','');
+//  $rows=$pdo->query("select * from uploads")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
+<div class="new"><a href="./upload.php">新增檔案</a></div>
+
+<?php
+$total_rows=$pdo->query("select count(*) from uploads")->fetchColumn();
+$div=5;
+$pages=ceil($total_rows/$div);
+$now=$_GET['p']??1;
+$start=($now-1)*$div;
+
+$rows=all("uploads"," limit $start,$div");
+?>
+<div class="pages">
+    <a href="?p=1">第一頁</a>
+    <div>
+    <?php
+    if($now-1>0){
+        echo "<a href='?p=".($now-1)."'>上一頁</a>";
+    }else{
+        echo "<a href='#'>上一頁</a>";
+    }
+
+    for($i=1;$i<=$pages;$i++){
+        echo "<div class=box>";
+        echo "<a href='?p=$i'>$i</a>";
+        echo "</div>";
+    }
+
+    if($now+1>0){
+        echo "<a href='?p=".($now+1)."'>下一頁</a>";
+    }else{
+        echo "<a href='#'>下一頁</a>";
+    }
+    ?>
+    </div>
+    <a href="?p=<?=$pages;?>">最後一頁</a>
+</div>
+<br>
 <table class="table">
     <tr>
         <th>序號</th>
