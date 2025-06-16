@@ -1,33 +1,55 @@
-body{
+body {
     background-color: rgb(57, 55, 55);
 }
-a{
+
+a {
     text-decoration: none;
     color: aliceblue;
     text-shadow: 2px 2px 2px black;
 }
-.types{
+
+.types {
     width: 20vw;
     height: 7vh;
-    background-color: rgb(127, 255, 212,0.3);
+    background-color: rgb(127, 255, 212, 0.3);
     margin: auto;
     margin-top: 2vh;
     text-align: center;
     padding-top: 3vh;
     border-radius: 30px;
     box-shadow: 2px 2px 5px white;
+    font-size: 1.5em;
 }
-.types:hover{
-    background-color: rgb(127, 255, 212,0.8);
+
+.types:hover {
+    background-color: rgb(127, 255, 212, 0.8);
     border: 4px solid aliceblue;
 }
-header{
+
+header {
     text-align: center;
     color: aliceblue;
     font-size: 2em;
 }
-form{
+
+form {
     text-align: center;
     margin-top: 5vh;
     color: aliceblue;
+}
+
+.home {
+    width: 10vw;
+    height: 5vh;
+    border: 2px solid aliceblue;
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    padding-top: 1.5vh;
+    margin-top: 2vh;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
 }
