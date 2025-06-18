@@ -13,7 +13,7 @@ move_uploaded_file($_FILES['name']['tmp_name'],'./files/'.$name);
 $dsn="mysql:host=localhost;dbname=files0617;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 
-$sql="insert into uploads(`name`,`type`,`description`) values('$name','$type','$decription')";
+$sql="insert into uploads(`name`,`type`,`description`) values('$name','$type','$description')";
 
 $pdo->exec($sql);
 
