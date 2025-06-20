@@ -36,12 +36,17 @@
 
         public function setName($name)
         {
-            return $this->name = $name;
+             $this->name = $name;
         }
 
         public function getAge()
         {
             return $this->age;
+        }
+
+        public function setAge($age)
+        {
+             $this->age= $age;
         }
     }
 
@@ -62,11 +67,25 @@
 
     <?php
 
-    class Man extends Person {
+    Interface PersonInterface{
+        public function getGender();
+        public function say();
+    }
+
+    class Man extends Person implements PersonInterface {
+        
         private $gender='男性';
+        public static $skin='yellow';
 
         function getGender() {
             return $this->gender;
+        }
+        function say(){
+
+        }
+
+        static function getskin(){
+            return self::$skin;
         }
     }
 
@@ -78,12 +97,17 @@
         }
     }
 
-    $man = new Man('john', 25);
-    echo $man->getName();
+    // $man = new Man('john', 25);
+    // echo $man->getName();
+    // echo "<br>";
+    // echo $man->getGender();
+    // echo "<br>";
+    // $man->greet();
+    // echo "<br>";
+
+    echo Man::$skin;
     echo "<br>";
-    echo $man->getGender();
-    echo "<br>";
-    $man->greet();
+    echo Man::getskin();
     echo "<br>";
 
     $woman = new Woman('rita', 28);
